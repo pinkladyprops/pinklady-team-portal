@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" class="plp-locked">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pre-Start Checklist | PinkLady Properties</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="../../assets/images/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/css/styles.css">
+</head>
+<body>
+
+<div id="site-content">
+  <div id="site-header"></div>
+
+  <section class="plp-hero plp-hero-small">
+    <div class="plp-hero-content">
+      <span class="plp-eyebrow">Start Here</span>
+      <h1>Pre-Start Checklist</h1>
+      <p class="plp-lede">
+        Complete every item below before Day 1. Check them off as you go &mdash;
+        your progress is saved automatically.
+      </p>
+    </div>
+  </section>
+
+  <section class="plp-content">
+    <a href="../start-here.html" class="plp-back-link">&larr; Back to Start Here</a>
+
+    <div id="pre-start-checklist"></div>
+  </section>
+
+  <div id="site-footer"></div>
+</div>
+
+<script src="../../assets/js/components.js"></script>
+<script src="../../assets/js/auth.js"></script>
+<script src="../../assets/js/checklist.js"></script>
+<script>
+  plpRenderHeader('start-here', '../../');
+  plpRenderFooter('../../');
+  plpInitAuth('../../');
+
+  plpInitChecklist({
+    containerId: 'pre-start-checklist',
+    storageKey: 'plpChecklist_preStart',
+    completionMessage: 'You are ready for Day 1. Your calls are being scheduled.',
+    items: [
+      { id: 'participation-agreement', label: 'Sign and return Team Participation Agreement' },
+      { id: 'protected-list', label: 'Submit Protected List (up to 25 contacts + immediate family)' },
+      { id: 'insurance-proof', label: 'Provide proof of E&O coverage and auto insurance ($500,000 minimum)' },
+      { id: 'tools-fee-payment', label: 'Confirm payment method on file for $75/month tools fee' },
+      { id: 'business-overview', label: 'Read One-Page Business Overview' },
+      { id: 'exhibit-a', label: 'Read Exhibit A — write down every question before Team Lead call' },
+      { id: 'headshot-bio', label: 'Provide professional headshot and bio to coordinator' }
+    ]
+  });
+</script>
+</body>
+</html>
