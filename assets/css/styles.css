@@ -356,6 +356,150 @@ html.plp-locked #site-content {
 }
 
 /* =========================
+   Agenda / call-prep pages
+   ========================= */
+.plp-before-call {
+  background: var(--plp-surface);
+  border: 1px solid var(--plp-border);
+  border-radius: var(--radius-lg);
+  padding: 26px 26px 22px;
+  margin-bottom: 36px;
+}
+
+.plp-before-call h2 {
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--plp-pink-light);
+  margin-bottom: 14px;
+}
+
+.plp-before-call > p {
+  margin: -6px 0 16px;
+  font-size: 0.92rem;
+}
+
+.plp-plain-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: var(--plp-gray);
+  font-size: 0.95rem;
+}
+
+.plp-plain-list li {
+  padding-left: 20px;
+  position: relative;
+}
+
+.plp-plain-list li::before {
+  content: '\2022';
+  position: absolute;
+  left: 0;
+  color: var(--plp-pink);
+  font-weight: 700;
+}
+
+.plp-plain-list a {
+  color: var(--plp-pink-light);
+  text-decoration: underline;
+}
+
+.plp-plain-list a:hover { color: var(--plp-pink); }
+
+.plp-agenda-block {
+  padding: 30px 0;
+  border-bottom: 1px solid var(--plp-border);
+}
+
+.plp-agenda-block:first-of-type { padding-top: 0; }
+.plp-agenda-block:last-of-type { border-bottom: none; padding-bottom: 0; }
+
+.plp-agenda-time {
+  display: inline-block;
+  font-weight: 700;
+  font-size: 0.82rem;
+  letter-spacing: 0.03em;
+  color: var(--plp-pink-light);
+  background: rgba(255, 47, 191, 0.1);
+  border: 1px solid var(--plp-pink-dim);
+  border-radius: 999px;
+  padding: 4px 14px;
+  margin-bottom: 12px;
+}
+
+.plp-agenda-title {
+  font-size: 1.2rem;
+  margin: 0 0 16px;
+}
+
+.plp-agenda-block > p.plp-agenda-note {
+  font-size: 0.98rem;
+  color: var(--plp-gray);
+  margin: 0;
+}
+
+/* Values — distinct standalone cards (Team Lead page) */
+.plp-value-card {
+  border-left: 4px solid var(--plp-pink);
+  background: var(--plp-surface);
+  border-radius: var(--radius-md);
+  padding: 22px 24px;
+  margin-bottom: 16px;
+  box-shadow: var(--shadow-card);
+}
+
+.plp-value-card:last-child { margin-bottom: 0; }
+
+.plp-value-card h3 {
+  font-size: 1.1rem;
+  color: var(--plp-pink-light);
+  margin: 0 0 8px;
+}
+
+.plp-value-card p { margin: 0; }
+
+/* Lighter sub-sections, e.g. each engine under one time block */
+.plp-subsection {
+  border-left: 3px solid var(--plp-pink-dim);
+  padding-left: 16px;
+  margin-bottom: 20px;
+}
+
+.plp-subsection:last-child { margin-bottom: 0; }
+
+.plp-subsection h4 {
+  font-size: 1rem;
+  color: var(--plp-white);
+  margin: 0 0 6px;
+}
+
+.plp-subsection p { margin: 0; }
+
+/* Pink callout box, e.g. non-negotiables */
+.plp-callout-pink {
+  border: 1.5px solid var(--plp-pink);
+  border-radius: var(--radius-lg);
+  background: rgba(255, 47, 191, 0.06);
+  box-shadow: var(--shadow-glow);
+  padding: 22px 26px;
+  margin: 18px 0 0;
+}
+
+.plp-callout-pink h4 {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--plp-pink-light);
+  margin: 0 0 14px;
+}
+
+.plp-callout-pink .plp-plain-list { color: var(--plp-white); }
+
+/* =========================
    Interactive checklist
    ========================= */
 .plp-checklist {
