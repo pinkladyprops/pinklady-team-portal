@@ -23,8 +23,13 @@ function plpRenderHeader(activeKey, basePath) {
     return '<a href="' + basePath + item.href + '"' + cls + '>' + item.label + '</a>';
   }).join('');
 
-  container.innerHTML =
-    '<header class="plp-header">' +
+  // Replace the placeholder div itself (not just its innerHTML) so <header>
+  // becomes a direct child of the tall #site-content wrapper instead of being
+  // trapped inside a div exactly its own height — a div that short breaks
+  // position:sticky, since a sticky element can only stick while its parent
+  // still has room left to scroll through.
+  container.outerHTML =
+    '<header class="plp-header" id="site-header">' +
       '<div class="plp-header-inner">' +
         '<a href="' + basePath + 'index.html" class="plp-brand">' +
           '<img src="' + basePath + 'assets/images/logo.png" alt="PinkLady Properties logo">' +

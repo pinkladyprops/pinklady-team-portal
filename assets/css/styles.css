@@ -434,6 +434,96 @@ html.plp-locked #site-content {
   box-shadow: var(--shadow-glow);
 }
 
+/* Overall progress bar (sectioned checklists) */
+.plp-checklist-overall {
+  position: sticky;
+  top: 76px;
+  z-index: 10;
+  background: var(--plp-black);
+  padding: 14px 0 18px;
+  margin-bottom: 10px;
+}
+
+.plp-checklist-overall-label {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 6px;
+  font-size: 0.9rem;
+  color: var(--plp-gray);
+  margin-bottom: 8px;
+}
+
+.plp-checklist-overall-label strong { color: var(--plp-white); }
+
+.plp-progress-bar {
+  height: 10px;
+  border-radius: 999px;
+  background: var(--plp-surface-alt);
+  border: 1px solid var(--plp-border);
+  overflow: hidden;
+}
+
+.plp-progress-bar-fill {
+  height: 100%;
+  background: var(--plp-gradient);
+  box-shadow: var(--shadow-glow);
+  transition: width 0.25s ease;
+}
+
+/* Sections and groups (sectioned checklists) */
+.plp-checklist-section {
+  margin: 36px 0;
+  padding-top: 8px;
+}
+
+.plp-checklist-section-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  border-bottom: 1px solid var(--plp-border);
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.plp-checklist-section-header h2 {
+  font-size: 1.3rem;
+  margin: 0;
+}
+
+.plp-checklist-section-progress {
+  font-size: 0.8rem;
+  color: var(--plp-gray-dim);
+  white-space: nowrap;
+}
+
+.plp-checklist-group { margin-bottom: 24px; }
+.plp-checklist-group:last-child { margin-bottom: 0; }
+
+.plp-checklist-group-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.plp-checklist-group-title {
+  font-weight: 600;
+  font-size: 0.88rem;
+  color: var(--plp-pink-light);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.plp-checklist-group-progress {
+  font-size: 0.78rem;
+  color: var(--plp-gray-dim);
+  white-space: nowrap;
+}
+
 /* =========================
    Footer
    ========================= */

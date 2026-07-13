@@ -21,7 +21,8 @@
       <span class="plp-eyebrow">Start Here</span>
       <h1>30-Day Checklist</h1>
       <p class="plp-lede">
-        Milestones for your first 30 days at PinkLady Properties.
+        Everything from before Day 1 through your Day 30 milestone. Check items off as you
+        go &mdash; your progress is saved automatically.
       </p>
     </div>
   </section>
@@ -29,9 +30,7 @@
   <section class="plp-content">
     <a href="../start-here.html" class="plp-back-link">&larr; Back to Start Here</a>
 
-    <div class="plp-content-placeholder">
-      Content coming soon.
-    </div>
+    <div id="thirty-day-checklist"></div>
   </section>
 
   <div id="site-footer"></div>
@@ -39,10 +38,216 @@
 
 <script src="../../assets/js/components.js"></script>
 <script src="../../assets/js/auth.js"></script>
+<script src="../../assets/js/checklist.js"></script>
 <script>
   plpRenderHeader('start-here', '../../');
   plpRenderFooter('../../');
   plpInitAuth('../../');
+
+  plpInitSectionedChecklist({
+    containerId: 'thirty-day-checklist',
+    storageKey: 'plpChecklist_thirtyDay',
+    completionMessage: 'Day 30 complete. You are officially up and running. Time to close something.',
+    sections: [
+      {
+        title: 'Before Day 1',
+        items: [
+          { id: 'before-participation-agreement', label: 'Sign and return Team Participation Agreement' },
+          { id: 'before-protected-list', label: 'Submit Protected List (up to 25 contacts + immediate family)' },
+          { id: 'before-insurance-proof', label: 'Provide proof of E&O coverage and auto insurance ($500,000 minimum)' },
+          { id: 'before-tools-fee', label: 'Confirm payment method on file for $75/month tools fee' },
+          { id: 'before-business-overview', label: 'Read One-Page Business Overview' },
+          { id: 'before-exhibit-a', label: 'Read Exhibit A — write down every question before Team Lead call' },
+          { id: 'before-headshot-bio', label: 'Provide professional headshot and bio to coordinator' }
+        ]
+      },
+      {
+        title: 'Week 1 — Get Operational',
+        groups: [
+          {
+            title: 'Systems',
+            items: [
+              { id: 'w1-sys-coordinator-call', label: 'Attend Team Coordinator onboarding call — log into every system live' },
+              { id: 'w1-sys-teamlead-call', label: 'Attend Team Lead onboarding call' },
+              { id: 'w1-sys-logins', label: 'Confirm all logins working: Lofty, Google Workspace, OpenPhone, Slack, Trello, ReZen' },
+              { id: 'w1-sys-email-signature', label: 'Set up email signature (coordinator installs live during call)' },
+              { id: 'w1-sys-voicemail', label: 'Record professional voicemail greeting on OpenPhone' },
+              { id: 'w1-sys-social-bio', label: 'Update Instagram and Facebook bio — team name, logo, correct title' },
+              { id: 'w1-sys-headshot-bio', label: 'Send coordinator your headshot and bio' }
+            ]
+          },
+          {
+            title: 'Calendar and Time Blocking',
+            items: [
+              { id: 'w1-cal-schedule', label: 'Build weekly time-blocked schedule on Google Calendar before end of Week 1' },
+              { id: 'w1-cal-engine-blocks', label: 'Time blocks must include dedicated hours for each engine: social media, 50 First Dates, expired letters, database building' },
+              { id: 'w1-cal-private', label: 'Mark all personal events as Private' },
+              { id: 'w1-cal-1on1', label: 'Schedule recurring monthly 1:1 with Team Lead' }
+            ]
+          },
+          {
+            title: 'Training',
+            items: [
+              { id: 'w1-training-hours', label: 'Minimum 2–3 hours this week: Real Academy, 47 Bricks Academy, or practice offers' },
+              { id: 'w1-training-practice-offer', label: 'Complete one practice offer — email to Team Lead for review' }
+            ]
+          },
+          {
+            title: 'Compliance',
+            items: [
+              { id: 'w1-compliance-sops', label: 'Review team SOPs in Google Drive as they become available' }
+            ]
+          }
+        ]
+      },
+      {
+        title: 'Week 2 — Engines On',
+        groups: [
+          {
+            title: 'Social Media',
+            items: [
+              { id: 'w2-social-posts', label: '5 posts published across Facebook and Instagram' },
+              { id: 'w2-social-stories', label: 'Daily Stories running every day this week' },
+              { id: 'w2-social-groups', label: 'Join all Facebook groups on approved group list in onboarding folder' },
+              { id: 'w2-social-bio', label: 'Confirm social bio is brand-compliant' }
+            ]
+          },
+          {
+            title: '50 First Dates',
+            items: [
+              { id: 'w2-fifty-board', label: 'Build your 50 First Dates Trello board' },
+              { id: 'w2-fifty-first25', label: 'Identify first 25 people for your list — equine community contacts, entrepreneurs, sphere members' },
+              { id: 'w2-fifty-two-meetings', label: 'Book and complete first 2 coffee meetings' },
+              { id: 'w2-fifty-meeting-followup', label: 'At every meeting: capture email, send calendar invite, add to Lofty' }
+            ]
+          },
+          {
+            title: 'Expired Letters',
+            items: [
+              { id: 'w2-expired-mls-search', label: 'Set up MLS saved search for expired equine/rural properties in your territory' },
+              { id: 'w2-expired-owner-info', label: 'Pull owner info for first 5 properties' },
+              { id: 'w2-expired-dup-check', label: 'Check team duplicate sheet before mailing' },
+              { id: 'w2-expired-five-letters', label: 'Send first 5 letters by end of Week 2' }
+            ]
+          },
+          {
+            title: 'DOTW',
+            items: [
+              { id: 'w2-dotw-first-submit', label: 'Submit first Deal of the Week to Trello by Wednesday hard deadline (first submission within 2 weeks)' }
+            ]
+          },
+          {
+            title: 'Training',
+            items: [
+              { id: 'w2-training-hours', label: 'Minimum 2–3 hours: Real Academy, 47 Bricks Academy, or practice offers' },
+              { id: 'w2-training-practice-offer', label: 'Complete one practice offer — email to Team Lead for review' }
+            ]
+          },
+          {
+            title: 'Leaderboard',
+            items: [
+              { id: 'w2-leaderboard-monday', label: 'Submit leaderboard activities by end of day Monday' }
+            ]
+          }
+        ]
+      },
+      {
+        title: 'Week 3 — Build Momentum',
+        groups: [
+          {
+            title: 'Social Media',
+            items: [
+              { id: 'w3-social-posts', label: '5 posts published across Facebook and Instagram' },
+              { id: 'w3-social-stories', label: 'Daily Stories every day' }
+            ]
+          },
+          {
+            title: '50 First Dates',
+            items: [
+              { id: 'w3-fifty-meeting', label: '1 coffee meeting completed minimum this week' },
+              { id: 'w3-fifty-followup', label: 'Follow up within 24 hours of every meeting' }
+            ]
+          },
+          {
+            title: 'Expired Letters',
+            items: [
+              { id: 'w3-expired-five-letters', label: '5 letters sent this week — weekly cadence is now non-negotiable' }
+            ]
+          },
+          {
+            title: 'DOTW',
+            items: [
+              { id: 'w3-dotw-submit', label: 'Submit DOTW to Trello by Wednesday hard deadline' }
+            ]
+          },
+          {
+            title: 'Training',
+            items: [
+              { id: 'w3-training-hours', label: 'Minimum 2–3 hours: Real Academy, 47 Bricks Academy, or practice offers' },
+              { id: 'w3-training-practice-offer', label: 'Complete one practice offer — email to Team Lead for review' }
+            ]
+          },
+          {
+            title: 'Leaderboard',
+            items: [
+              { id: 'w3-leaderboard-monday', label: 'Submit leaderboard activities by end of day Monday' }
+            ]
+          }
+        ]
+      },
+      {
+        title: 'Week 4 — Day 30 Ready',
+        groups: [
+          {
+            title: 'Social Media',
+            items: [
+              { id: 'w4-social-posts', label: '5 posts published across Facebook and Instagram' },
+              { id: 'w4-social-stories', label: 'Daily Stories every day' }
+            ]
+          },
+          {
+            title: '50 First Dates',
+            items: [
+              { id: 'w4-fifty-meeting', label: '1 coffee meeting completed minimum' },
+              { id: 'w4-fifty-running-total', label: 'Running total: 5+ First Dates completed by Day 30' }
+            ]
+          },
+          {
+            title: 'Expired Letters',
+            items: [
+              { id: 'w4-expired-five-letters', label: '5 letters sent this week' },
+              { id: 'w4-expired-running-total', label: 'Running total: 15+ letters sent by Day 30' }
+            ]
+          },
+          {
+            title: 'DOTW',
+            items: [
+              { id: 'w4-dotw-submit', label: 'Submit DOTW to Trello by Wednesday hard deadline' }
+            ]
+          },
+          {
+            title: 'Training',
+            items: [
+              { id: 'w4-training-hours', label: 'Minimum 2–3 hours: Real Academy, 47 Bricks Academy, or practice offers' },
+              { id: 'w4-training-practice-offer', label: 'Complete one practice offer — email to Team Lead for review' }
+            ]
+          },
+          {
+            title: 'Leaderboard',
+            items: [
+              { id: 'w4-leaderboard-monday', label: 'Submit leaderboard activities by end of day Monday' }
+            ]
+          }
+        ]
+      },
+      {
+        title: 'Day 30 Milestone — Non-Negotiable',
+        items: [
+          { id: 'day30-lofty-contacts', label: '100 contacts in Lofty with emails, all tagged correctly' }
+        ]
+      }
+    ]
+  });
 </script>
 </body>
 </html>
