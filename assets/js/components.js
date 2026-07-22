@@ -6,6 +6,7 @@
 
 var PLP_NAV_ITEMS = [
   { key: 'home', label: 'Home', href: 'index.html' },
+  { key: 'leaderboard', label: 'Leaderboard', href: 'pages/leaderboard.html' },
   { key: 'start-here', label: 'Start Here', href: 'pages/start-here.html' },
   { key: 'sops', label: 'Book of SOPs', href: 'pages/sops.html' },
   { key: 'engines', label: 'The Engines', href: 'pages/engines.html' },

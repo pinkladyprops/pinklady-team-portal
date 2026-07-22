@@ -669,6 +669,16 @@ html.plp-locked #site-content {
 }
 
 /* =========================
+   Leaderboard (embedded Apps Script tool)
+   ========================= */
+.plp-leaderboard-frame {
+  display: block;
+  width: 100%;
+  height: calc(100vh - 70px);
+  border: 0;
+}
+
+/* =========================
    Footer
    ========================= */
 .plp-footer {
