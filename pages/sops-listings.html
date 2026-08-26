@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" class="plp-locked">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Listings | Book of SOPs | PinkLady Properties</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="../assets/images/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+
+<div id="site-content">
+  <div id="site-header"></div>
+
+  <section class="plp-hero plp-hero-small">
+    <div class="plp-hero-content">
+      <span class="plp-eyebrow">Book of SOPs &middot; For Agents</span>
+      <h1>📋 Listings</h1>
+    </div>
+  </section>
+
+  <nav class="plp-sop-nav" id="sop-nav"></nav>
+
+  <p class="plp-page-summary"><strong>What this is:</strong> Listing intake, prep, MLS entry, and showing procedures.</p>
+
+  <div class="plp-sop-body">
+    <div class="plp-callout-pink plp-callout-warning">
+      <h4>Coming Soon</h4>
+      <p style="margin:0;color:var(--plp-white);">Listing SOPs are being built. Check back soon.</p>
+    </div>
+  </div>
+
+  <div id="site-footer"></div>
+</div>
+
+<script src="../assets/js/components.js"></script>
+<script src="../assets/js/auth.js"></script>
+<script>
+  plpRenderHeader('sops', '../');
+  plpRenderSopNav('agents', 'listings', '../');
+  plpRenderFooter('../');
+  plpInitAuth('../');
+</script>
+</body>
+</html>

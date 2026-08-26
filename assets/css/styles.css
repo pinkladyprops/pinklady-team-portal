@@ -679,6 +679,375 @@ html.plp-locked #site-content {
 }
 
 /* =========================
+   SOP two-tier tab navigation
+   ========================= */
+.plp-sop-nav {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.plp-sop-toptabs {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  border-bottom: 1px solid var(--plp-border);
+  padding-bottom: 18px;
+  margin-bottom: 16px;
+}
+
+.plp-sop-toptabs a {
+  padding: 11px 20px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.88rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  border: 1px solid var(--plp-border);
+  color: var(--plp-gray);
+  transition: all 0.18s ease;
+}
+
+.plp-sop-toptabs a:hover { color: var(--plp-white); border-color: var(--plp-pink-dim); }
+
+.plp-sop-toptabs a.active {
+  background: var(--plp-gradient);
+  color: var(--plp-black);
+  border-color: transparent;
+  box-shadow: var(--shadow-glow);
+}
+
+.plp-sop-subtabs {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+}
+
+.plp-sop-subtabs a {
+  padding: 8px 16px;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--plp-gray);
+  background: var(--plp-surface);
+  border: 1px solid var(--plp-border);
+  transition: all 0.18s ease;
+}
+
+.plp-sop-subtabs a:hover { color: var(--plp-white); border-color: var(--plp-pink-dim); }
+
+.plp-sop-subtabs a.active {
+  color: var(--plp-black);
+  background: var(--plp-pink);
+  border-color: var(--plp-pink);
+}
+
+/* =========================
+   SOP page summary line
+   ========================= */
+.plp-page-summary {
+  max-width: var(--max-width);
+  margin: 0 auto 8px;
+  padding: 14px 24px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--plp-white);
+}
+
+.plp-page-summary strong { color: var(--plp-pink-light); }
+
+/* =========================
+   SOP accordions
+   ========================= */
+.plp-sop-body {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 10px 24px 80px;
+}
+
+.plp-accordion-section {
+  margin-bottom: 30px;
+}
+
+.plp-accordion-section-label {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--plp-pink-light);
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.plp-accordion-section-title {
+  font-size: 1.5rem;
+  margin-bottom: 6px;
+}
+
+.plp-accordion-section-summary {
+  color: var(--plp-gray);
+  font-size: 0.95rem;
+  margin-bottom: 18px;
+}
+
+.plp-accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.plp-accordion-item {
+  background: var(--plp-surface);
+  border: 1px solid var(--plp-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.plp-accordion-item[open] {
+  border-color: var(--plp-pink-dim);
+}
+
+.plp-accordion-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px 20px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--plp-white);
+  list-style: none;
+}
+
+.plp-accordion-header::-webkit-details-marker { display: none; }
+.plp-accordion-header::marker { content: ''; }
+
+.plp-accordion-header .plp-chevron {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--plp-pink);
+  transition: transform 0.2s ease;
+  font-size: 1.1rem;
+}
+
+.plp-accordion-item[open] .plp-chevron { transform: rotate(180deg); }
+
+.plp-accordion-body {
+  padding: 4px 20px 22px;
+  border-top: 1px solid var(--plp-border);
+  padding-top: 18px;
+}
+
+/* Nested sub-accordions (e.g. Deal of the Week: For Agents / For Coordinators) */
+.plp-accordion-item .plp-accordion-item {
+  background: var(--plp-surface-alt);
+}
+
+/* =========================
+   Numbered step checklist
+   ========================= */
+.plp-step-list {
+  list-style: none;
+  margin: 0 0 16px;
+  padding: 0;
+  counter-reset: plp-step;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.plp-step-list li {
+  counter-increment: plp-step;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 0.95rem;
+  color: var(--plp-white);
+  line-height: 1.5;
+}
+
+.plp-step-list li::before {
+  content: counter(plp-step);
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--plp-surface-alt);
+  border: 1px solid var(--plp-pink-dim);
+  color: var(--plp-pink-light);
+  font-size: 0.78rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1px;
+}
+
+.plp-step-list .plp-badge { margin-left: 4px; }
+
+/* =========================
+   Owner badges
+   ========================= */
+.plp-badge {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 2px 9px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.badge-agent { background: var(--plp-pink); color: var(--plp-black); }
+.badge-tc { background: #050506; color: var(--plp-white); border: 1px solid var(--plp-border); }
+.badge-lead { background: var(--plp-gray-dim); color: var(--plp-black); }
+.badge-coordinator { background: var(--plp-gray); color: var(--plp-black); }
+
+/* =========================
+   If This -> Do This cards
+   ========================= */
+.plp-ifthis-label {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--plp-pink-light);
+  font-weight: 700;
+  margin: 18px 0 8px;
+}
+
+.plp-ifthis {
+  background: #fce8f6;
+  border-left: 4px solid var(--plp-pink);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  padding: 14px 18px;
+  margin-bottom: 10px;
+  color: #241220;
+  font-size: 0.93rem;
+  line-height: 1.55;
+}
+
+.plp-ifthis:last-child { margin-bottom: 0; }
+
+.plp-ifthis .if-tag {
+  color: #c8007f;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+.plp-ifthis .arrow {
+  color: #c8007f;
+  font-weight: 700;
+  margin: 0 4px;
+}
+
+.plp-ifthis .do-tag {
+  color: #14090f;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+/* =========================
+   Golden rules / warning callouts (extends .plp-callout-pink)
+   ========================= */
+.plp-callout-pink.plp-callout-warning {
+  border-color: var(--plp-pink);
+  background: rgba(255, 47, 191, 0.1);
+}
+
+.plp-callout-pink .plp-numbered-plain {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: plp-rule;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.plp-callout-pink .plp-numbered-plain li {
+  counter-increment: plp-rule;
+  color: var(--plp-white);
+  font-size: 0.95rem;
+  padding-left: 30px;
+  position: relative;
+}
+
+.plp-callout-pink .plp-numbered-plain li::before {
+  content: counter(plp-rule);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--plp-pink);
+  color: var(--plp-black);
+  font-size: 0.7rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Level accordion headers on Client Situations page */
+.plp-level-1 .plp-accordion-header { color: #7ee787; }
+.plp-level-2 .plp-accordion-header { color: #ffc861; }
+.plp-level-3 .plp-accordion-header { color: #ff6b6b; }
+
+/* Simple checklist (no numbers) for Approved/Not-Authorized automation lists */
+.plp-simple-checklist {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.plp-simple-checklist li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.95rem;
+  color: var(--plp-white);
+  line-height: 1.5;
+}
+
+.plp-simple-checklist li::before {
+  content: '';
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
+  border-radius: 5px;
+  border: 2px solid var(--plp-pink-dim);
+}
+
+.plp-simple-checklist.is-danger li::before {
+  border-color: #ff6b6b;
+}
+
+/* Coming soon placeholder inside accordion body */
+.plp-coming-soon-inline {
+  color: var(--plp-gray);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 480px) {
+  .plp-accordion-header { padding: 14px 16px; font-size: 0.93rem; }
+  .plp-accordion-body { padding: 4px 16px 18px; padding-top: 16px; }
+  .plp-ifthis { padding: 12px 14px; }
+  .plp-sop-toptabs a { padding: 9px 16px; font-size: 0.8rem; }
+}
+
+/* =========================
    Footer
    ========================= */
 .plp-footer {

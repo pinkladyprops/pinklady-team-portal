@@ -49,6 +49,49 @@ function plpRenderHeader(activeKey, basePath) {
   }
 }
 
+/* =========================================================
+   SOP two-tier tab navigation (Book of SOPs pages only)
+   topKey: 'agents' | 'coordinators'
+   subKey: 'buyers' | 'listings' | 'engines' | 'client-situations' | 'coordinator'
+   ========================================================= */
+var PLP_SOP_TOP_TABS = [
+  { key: 'agents', label: 'For Agents' },
+  { key: 'coordinators', label: 'For Coordinators + Leadership' }
+];
+
+var PLP_SOP_SUB_TABS = {
+  agents: [
+    { key: 'buyers', label: '🏠 Buyers', href: 'sops-buyers.html' },
+    { key: 'listings', label: '📋 Listings', href: 'sops-listings.html' },
+    { key: 'engines', label: '⚡ Engines', href: 'sops-engines.html' },
+    { key: 'client-situations', label: '🤝 Client Situations', href: 'sops-client-situations.html' }
+  ],
+  coordinators: [
+    { key: 'coordinator', label: '🔧 Coordinator + Leadership', href: 'sops-coordinator.html' }
+  ]
+};
+
+function plpRenderSopNav(topKey, subKey, basePath) {
+  basePath = basePath || '';
+  var container = document.getElementById('sop-nav');
+  if (!container) return;
+
+  var topLinks = PLP_SOP_TOP_TABS.map(function (t) {
+    var cls = t.key === topKey ? ' class="active"' : '';
+    var firstSub = PLP_SOP_SUB_TABS[t.key][0];
+    return '<a href="' + basePath + 'pages/' + firstSub.href + '"' + cls + '>' + t.label + '</a>';
+  }).join('');
+
+  var subLinks = PLP_SOP_SUB_TABS[topKey].map(function (s) {
+    var cls = s.key === subKey ? ' class="active"' : '';
+    return '<a href="' + basePath + 'pages/' + s.href + '"' + cls + '>' + s.label + '</a>';
+  }).join('');
+
+  container.innerHTML =
+    '<div class="plp-sop-toptabs">' + topLinks + '</div>' +
+    '<div class="plp-sop-subtabs">' + subLinks + '</div>';
+}
+
 function plpRenderFooter(basePath) {
   basePath = basePath || '';
   var container = document.getElementById('site-footer');
