@@ -29,9 +29,97 @@
 
   <div class="plp-sop-body">
 
-    <!-- ============ SECTION A: BUYER OPERATIONS ============ -->
+    <!-- ============ SECTION A: LEAD ROUTING & TERRITORY MAP ============ -->
     <div class="plp-accordion-section">
       <div class="plp-accordion-section-label">Section A</div>
+      <h2 class="plp-accordion-section-title">🗺️ Lead Routing &amp; Territory Map</h2>
+      <p class="plp-accordion-section-summary">New lead came in? Here's who gets it and how to set it up in Lofty.</p>
+
+      <div class="plp-accordion">
+
+        <details class="plp-accordion-item">
+          <summary class="plp-accordion-header">📍 Territory Map <span class="plp-chevron">⌄</span></summary>
+          <div class="plp-accordion-body">
+            <div class="plp-callout-pink plp-callout-warning" style="margin-top:0;">
+              <ul class="plp-plain-list" style="margin:0;">
+                <li>Reference the territory map on the Trello Team Board</li>
+                <li>Territory map has been approved by all team members and is absolute — when in doubt, check Trello</li>
+              </ul>
+            </div>
+          </div>
+        </details>
+
+        <details class="plp-accordion-item">
+          <summary class="plp-accordion-header">📥 Routing Rules — Which Agent Gets the Lead? <span class="plp-chevron">⌄</span></summary>
+          <div class="plp-accordion-body">
+            <div class="plp-ifthis"><span class="if-tag">IF:</span> Lead has a specific property address <span class="arrow">→</span> <span class="do-tag">DO:</span> Check the county against the territory map. Route to that county's agent. If county is unassigned, route to Team Lead.</div>
+            <div class="plp-ifthis"><span class="if-tag">IF:</span> Lead has no specific property (general inquiry) <span class="arrow">→</span> <span class="do-tag">DO:</span> Ask "What area of Wisconsin are you focused on?" Route by their answer. If statewide or unclear, route to Team Lead to triage.</div>
+            <div class="plp-ifthis"><span class="if-tag">IF:</span> Lead is for a horse or equine property (any territory) <span class="arrow">→</span> <span class="do-tag">DO:</span> Tag as Equine Buyer or Equine Seller in Lofty immediately. Route to territory agent. Notify Team Lead for any equine listing opportunity. All equine listings co-list with PLP regardless of who sourced it.*</div>
+          </div>
+        </details>
+
+        <details class="plp-accordion-item">
+          <summary class="plp-accordion-header">🏷️ How to Set Up a Lead in Lofty — Step by Step <span class="plp-chevron">⌄</span></summary>
+          <div class="plp-accordion-body">
+            <div class="plp-callout-pink plp-callout-warning" style="margin-top:0;margin-bottom:0;">
+              <p style="margin:0;color:var(--plp-white);font-weight:600;">Both fields must be set before you send a single follow-up message.</p>
+            </div>
+
+            <div class="plp-two-col-cards">
+              <div class="plp-value-card">
+                <h3>OWNER field</h3>
+                <p>Who sourced the lead. Determines the 20% Lead Generator split. Set this immediately.</p>
+                <ul class="plp-plain-list">
+                  <li>Company = came through team source (website, LP, social) → PLP gets the 20%</li>
+                  <li>Your name = you sourced it personally → you keep the 20%</li>
+                </ul>
+              </div>
+              <div class="plp-value-card">
+                <h3>ASSIGNED TO (Agent)</h3>
+                <p>Who is working the lead in the field. Earns the 50% Boots-on-Ground split.</p>
+                <ul class="plp-plain-list">
+                  <li>Set to whoever is doing showings, consults, and field work</li>
+                </ul>
+              </div>
+            </div>
+
+            <ol class="plp-step-list">
+              <li>Find or create the contact record in Lofty</li>
+              <li>Set OWNER — your name if you sourced it, Company if it came through a team channel</li>
+              <li>Set ASSIGNED TO (Agent) — whoever is executing in the field</li>
+              <li>Add lead source tag (Expired Letter, Open House, Referral, Website, etc.)</li>
+              <li>Add lead type tag (Equine Buyer, Equine Seller, Buyer, Seller)</li>
+              <li>Set a follow-up task before closing the record — never leave a lead with no next action</li>
+              <li>If ownership is unclear — tag under your name immediately and Slack Team Lead within the hour</li>
+            </ol>
+          </div>
+        </details>
+
+        <details class="plp-accordion-item">
+          <summary class="plp-accordion-header">⚖️ Lead Ownership Disputes <span class="plp-chevron">⌄</span></summary>
+          <div class="plp-accordion-body">
+            <div class="plp-callout-pink plp-callout-warning" style="margin-top:0;">
+              <p style="margin:0;color:var(--plp-white);font-weight:600;">The best way to win a lead dispute is to never have one — tag everything immediately.</p>
+            </div>
+            <ol class="plp-step-list">
+              <li>Check Lofty — whoever tagged first owns it. Timestamp is the tiebreaker.</li>
+              <li>If both tagged within the same hour — bring to Team Lead within 24 hours</li>
+              <li>Team Lead's decision is final — no further escalation</li>
+            </ol>
+          </div>
+        </details>
+
+      </div>
+
+      <div class="plp-callout-pink plp-callout-warning" style="margin-top:20px;">
+        <h4>⏰ 24-Hour Rule</h4>
+        <p style="margin:0;color:var(--plp-white);font-weight:600;">Every lead must be logged and configured in Lofty within 24 hours of first contact. No CRM setup = no claim. No exceptions.</p>
+      </div>
+    </div>
+
+    <!-- ============ SECTION B: BUYER OPERATIONS ============ -->
+    <div class="plp-accordion-section">
+      <div class="plp-accordion-section-label">Section B</div>
       <h2 class="plp-accordion-section-title">Buyer Operations</h2>
       <p class="plp-accordion-section-summary">The full buyer journey — from first contact to post-closing. Click each phase to expand.</p>
 
@@ -81,7 +169,7 @@
               <li><span class="plp-badge badge-agent">Agent</span> Set up the offer in ZipForms with all needed documents — Residential Offer to Purchase, Addendum RA, Add S, RECR, Real Affiliated Business Arrangement, Consumer Choice &amp; Referral Fee Disclosure</li>
             </ol>
             <div class="plp-ifthis-label">If This → Do This</div>
-            <div class="plp-ifthis"><span class="if-tag">IF:</span> Buyer wants to write on a property they haven't seen in person <span class="arrow">→</span> <span class="do-tag">DO:</span> Escalate to Cailyn.</div>
+            <div class="plp-ifthis"><span class="if-tag">IF:</span> Buyer wants to write on a property they haven't seen in person <span class="arrow">→</span> <span class="do-tag">DO:</span> Escalate to Team Lead.</div>
           </div>
         </details>
 
@@ -103,7 +191,7 @@
               <li><span class="plp-badge badge-tc">TC</span> Add all contingency/transaction deadlines to the calendar (inspection, financing, appraisal, well/septic, title); invite client; keep updated</li>
             </ol>
             <div class="plp-ifthis-label">If This → Do This</div>
-            <div class="plp-ifthis"><span class="if-tag">IF:</span> Earnest Money is not received by the deadline <span class="arrow">→</span> <span class="do-tag">DO:</span> Follow up with the buyer 2 days before it's due. If still no action by the deadline, notify the agent and Cailyn immediately — buyer may be at risk of default.</div>
+            <div class="plp-ifthis"><span class="if-tag">IF:</span> Earnest Money is not received by the deadline <span class="arrow">→</span> <span class="do-tag">DO:</span> Follow up with the buyer 2 days before it's due. If still no action by the deadline, notify the agent and Team Lead immediately — buyer may be at risk of default.</div>
             <div class="plp-ifthis"><span class="if-tag">IF:</span> An offer is being written but Buyer Agency was never signed <span class="arrow">→</span> <span class="do-tag">DO:</span> Require a signed BA or Disclosure to Customer before writing or submitting any offer.</div>
           </div>
         </details>
@@ -126,8 +214,8 @@
               <li><span class="plp-badge badge-tc">TC</span> Confirm utility transfer details with Listing Agent; relay to buyer</li>
             </ol>
             <div class="plp-ifthis-label">If This → Do This</div>
-            <div class="plp-ifthis"><span class="if-tag">IF:</span> Inspection reveals a major or structural issue <span class="arrow">→</span> <span class="do-tag">DO:</span> Escalate to the agent and Cailyn.</div>
-            <div class="plp-ifthis"><span class="if-tag">IF:</span> A contingency deadline is at risk of being missed <span class="arrow">→</span> <span class="do-tag">DO:</span> Notify the agent and Cailyn at least 48 hours before, so an extension addendum can be prepared if needed.</div>
+            <div class="plp-ifthis"><span class="if-tag">IF:</span> Inspection reveals a major or structural issue <span class="arrow">→</span> <span class="do-tag">DO:</span> Escalate to the agent and Team Lead.</div>
+            <div class="plp-ifthis"><span class="if-tag">IF:</span> A contingency deadline is at risk of being missed <span class="arrow">→</span> <span class="do-tag">DO:</span> Notify the agent and Team Lead at least 48 hours before, so an extension addendum can be prepared if needed.</div>
           </div>
         </details>
 
@@ -160,7 +248,7 @@
               <li><span class="plp-badge badge-tc">TC</span> Upload the ALTA to Rezen</li>
             </ol>
             <div class="plp-ifthis-label">If This → Do This</div>
-            <div class="plp-ifthis"><span class="if-tag">IF:</span> The CDA has not been approved by Cailyn <span class="arrow">→</span> <span class="do-tag">DO:</span> Do not send it to Title until Cailyn has approved it.</div>
+            <div class="plp-ifthis"><span class="if-tag">IF:</span> The CDA has not been approved by Team Lead <span class="arrow">→</span> <span class="do-tag">DO:</span> Do not send it to Title until Team Lead has approved it.</div>
           </div>
         </details>
 
@@ -198,9 +286,9 @@
       </div>
     </div>
 
-    <!-- ============ SECTION B: BUYER SHOWING ============ -->
+    <!-- ============ SECTION C: BUYER SHOWING ============ -->
     <div class="plp-accordion-section">
-      <div class="plp-accordion-section-label">Section B</div>
+      <div class="plp-accordion-section-label">Section C</div>
       <h2 class="plp-accordion-section-title">Buyer Showing</h2>
       <p class="plp-accordion-section-summary">Everything you need before, during, and after a showing.</p>
 
