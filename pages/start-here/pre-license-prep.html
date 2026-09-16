@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en" class="plp-locked">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pre-License Prep | PinkLady Properties</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="../../assets/images/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/css/styles.css">
+</head>
+<body>
+
+<div id="site-content">
+  <div id="site-header"></div>
+
+  <section class="plp-hero plp-hero-small">
+    <div class="plp-hero-content">
+      <span class="plp-eyebrow">Start Here</span>
+      <h1>Pre-License Prep</h1>
+      <p class="plp-lede">
+        For agents joining before their license is active &mdash; build your foundation now.
+      </p>
+    </div>
+  </section>
+
+  <section class="plp-content">
+    <a href="../start-here.html" class="plp-back-link">&larr; Back to Start Here</a>
+
+    <div id="pre-license-checklist"></div>
+  </section>
+
+  <div id="site-footer"></div>
+</div>
+
+<script src="../../assets/js/components.js"></script>
+<script src="../../assets/js/auth.js"></script>
+<script src="../../assets/js/checklist.js"></script>
+<script>
+  plpRenderHeader('start-here', '../../');
+  plpRenderFooter('../../');
+  plpInitAuth('../../');
+
+  plpInitSectionedChecklist({
+    containerId: 'pre-license-checklist',
+    storageKey: 'plpChecklist_preLicense',
+    completionMessage: 'Foundation built. The moment your license is active, you are ready to hit the ground running.',
+    sections: [
+      {
+        title: '1. Build &amp; Organize Your Database (Goal: 150–300 contacts)',
+        items: [
+          { id: 'pl1-export', label: 'Export contacts from phone, email, socials' },
+          { id: 'pl1-fields', label: 'Add full name, mobile, email, city, notes (SOI, horse world, local business, past coworkers)' },
+          { id: 'pl1-load', label: 'Load into the team starter spreadsheet' }
+        ]
+      },
+      {
+        title: '2. Set Up Social Media (Staged, Not Public)',
+        items: [
+          { id: 'pl2-fb-page', label: 'Create a Facebook Page (keep unpublished until licensed)' },
+          { id: 'pl2-ig', label: 'Create an Instagram account (private, draft posts ready, switch to Professional at launch)' },
+          { id: 'pl2-bio', label: 'Add headshot, bio, and "with PinkLady Properties | Real Broker LLC"' },
+          { id: 'pl2-drafts', label: 'Draft 6–9 launch posts as drafts' },
+          { id: 'pl2-groups', label: 'Join Wisconsin real estate and Horse Properties groups — minimum 25 (see <a href="../resources/facebook-groups.html" style="color:var(--plp-pink-light);text-decoration:underline;">Facebook Groups list</a> in Resources)' }
+        ]
+      },
+      {
+        title: '3. Study the Market Daily (10–15 min)',
+        items: [
+          { id: 'pl3-track', label: 'Track new/pending/sold in your target areas' },
+          { id: 'pl3-notes', label: 'Note price bands, days on market, common features' }
+        ]
+      },
+      {
+        title: '4. Practice Real Estate Conversations (Weekly)',
+        items: [
+          { id: 'pl4-rehearse', label: 'Rehearse your SOI intro and buyer/seller consult openers' },
+          { id: 'pl4-video', label: 'Record a 60-second "what I\'m learning" video for self-feedback (don\'t post it)' }
+        ]
+      },
+      {
+        title: '5. Announce Your Journey (Soft-Open)',
+        items: [
+          { id: 'pl5-draft', label: 'Draft a "Why real estate / Why PLP" post' },
+          { id: 'pl5-honesty', label: 'Do not give the impression you are currently licensed and practicing if you aren\'t yet' },
+          { id: 'pl5-dm', label: 'Create a DM script to thank supporters and log warm leads' }
+        ]
+      },
+      {
+        title: '6. Learn the Systems',
+        items: [
+          { id: 'pl6-logins', label: 'Log into Slack, Gmail, and Canva' },
+          { id: 'pl6-familiarize', label: 'Familiarize yourself with each platform' }
+        ]
+      },
+      {
+        title: '7. Build Your Brand Toolkit',
+        items: [
+          { id: 'pl7-bio', label: 'Write a 2-paragraph bio' },
+          { id: 'pl7-captions', label: 'Write 5 one-line captions about you' },
+          { id: 'pl7-faqs', label: 'Write 10 FAQs you can answer' },
+          { id: 'pl7-headshot', label: 'Schedule a headshot session' }
+        ]
+      },
+      {
+        title: '8. Get Business-Ready Financially',
+        items: [
+          { id: 'pl8-bank', label: 'Open a business bank account if operating under an entity' },
+          { id: 'pl8-mileage', label: 'Turn on mileage tracking' },
+          { id: 'pl8-budget', label: 'Create a startup budget' },
+          { id: 'pl8-splits', label: 'Understand how commissions and splits work on the team' }
+        ]
+      },
+      {
+        title: '9. Meet Local Partners (2 per week)',
+        items: [
+          { id: 'pl9-vendors', label: 'Lenders, inspectors, title companies, stagers, photographers, equine vendors' },
+          { id: 'pl9-follow', label: 'Follow on socials, comment once, save contact info' },
+          { id: 'pl9-ask', label: 'Ask each: "What makes a file go smoothly with you?"' }
+        ]
+      },
+      {
+        title: '10. Shadow &amp; Observe (As Available)',
+        items: [
+          { id: 'pl10-meeting', label: 'Sit in on a team meeting' },
+          { id: 'pl10-openhouse', label: 'Shadow an open house or listing prep day' },
+          { id: 'pl10-consult', label: 'Sit in on a buyer or seller consult' }
+        ]
+      },
+      {
+        title: '11. Get Yourself Ready for Success',
+        items: [
+          { id: 'pl11-timeblock', label: 'Develop a time-blocking routine (see <a href="../resources.html#time-blocking" style="color:var(--plp-pink-light);text-decoration:underline;">Time Blocking prompt</a> in Resources)' },
+          { id: 'pl11-books', label: 'Review <a href="../resources.html#books-podcasts" style="color:var(--plp-pink-light);text-decoration:underline;">recommended books and podcasts</a> in Resources' }
+        ]
+      }
+    ]
+  });
+</script>
+</body>
+</html>

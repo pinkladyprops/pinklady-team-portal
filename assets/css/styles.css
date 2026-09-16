@@ -39,6 +39,8 @@ html, body {
   padding: 0;
 }
 
+html { scroll-behavior: smooth; }
+
 body {
   background-color: var(--plp-black);
   color: var(--plp-white);
@@ -1038,6 +1040,58 @@ html.plp-locked #site-content {
 .plp-coming-soon-inline {
   color: var(--plp-gray);
   font-size: 0.9rem;
+}
+
+/* Extra content attached to a checklist item (accordions, jump links) */
+.plp-checklist-extra {
+  margin: -4px 0 4px;
+}
+
+.plp-checklist-jump-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--plp-pink-light);
+  padding: 6px 4px 6px 18px;
+}
+
+.plp-checklist-jump-link:hover { color: var(--plp-pink); }
+
+/* Copy-paste prompt / code blocks */
+.plp-code-block {
+  background: var(--plp-black-soft);
+  border: 1px solid var(--plp-border);
+  border-radius: var(--radius-md);
+  padding: 18px 20px;
+  margin: 16px 0;
+  overflow-x: auto;
+}
+
+.plp-code-block code {
+  display: block;
+  white-space: pre-wrap;
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: var(--plp-white);
+}
+
+/* Multi-column reference lists (e.g. Facebook Groups) */
+.plp-groups-list {
+  display: block;
+  columns: 2;
+  column-gap: 32px;
+}
+
+.plp-groups-list li {
+  break-inside: avoid;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 620px) {
+  .plp-groups-list { columns: 1; }
 }
 
 /* Two side-by-side info cards (e.g. Lofty OWNER / ASSIGNED TO fields) */

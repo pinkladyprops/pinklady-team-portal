@@ -28,6 +28,13 @@
 
   <section class="plp-section">
     <div class="plp-grid">
+      <a href="resources/facebook-groups.html" class="plp-card">
+        <div class="plp-card-icon">👥</div>
+        <h3>Facebook Groups to Join</h3>
+        <p>Wisconsin real estate, Wisconsin horse-property, and nationwide equestrian groups.</p>
+        <span class="plp-card-link">View groups &rarr;</span>
+      </a>
+
       <div class="plp-card">
         <span class="plp-card-badge">Coming soon</span>
         <div class="plp-card-icon">📝</div>
@@ -58,6 +65,108 @@
     </div>
   </section>
 
+  <section class="plp-sop-body" style="padding-top:0;">
+    <div class="plp-accordion-section">
+      <div class="plp-accordion-section-label">Quick Reference</div>
+      <h2 class="plp-accordion-section-title">Templates &amp; Prompts</h2>
+      <p class="plp-accordion-section-summary">Small reference items agents reach for often.</p>
+
+      <div class="plp-accordion">
+        <details class="plp-accordion-item" id="gmail-folders">
+          <summary class="plp-accordion-header">📁 Gmail Folder Structure <span class="plp-chevron">⌄</span></summary>
+          <div class="plp-accordion-body">
+
+            <div class="plp-checklist-group-title" style="margin-bottom:10px;">Client Folders</div>
+            <ul class="plp-simple-checklist" style="margin-bottom:22px;">
+              <li>Active Buyers</li>
+              <li>Active Listings</li>
+              <li>Under Contract</li>
+              <li>Closed Transactions</li>
+              <li>Potential Buyers</li>
+              <li>Potential Listings</li>
+              <li>Referrals</li>
+            </ul>
+
+            <div class="plp-checklist-group-title" style="margin-bottom:10px;">Business &amp; Admin</div>
+            <ul class="plp-simple-checklist" style="margin-bottom:22px;">
+              <li>Admin/Internal</li>
+              <li>Meetings &amp; Appointments</li>
+              <li>Business Documents (Commission Statements, Invoices, Receipts)</li>
+            </ul>
+
+            <div class="plp-checklist-group-title" style="margin-bottom:10px;">Marketing &amp; Operations</div>
+            <ul class="plp-simple-checklist" style="margin-bottom:22px;">
+              <li>Marketing/Social Media</li>
+              <li>Open Houses</li>
+              <li>Vendors &amp; Contractors</li>
+              <li>Partners</li>
+            </ul>
+
+            <div class="plp-checklist-group-title" style="margin-bottom:10px;">Support &amp; Organization</div>
+            <ul class="plp-simple-checklist">
+              <li>Resources/Templates</li>
+              <li>Education &amp; Training</li>
+              <li>Compliance/MLS</li>
+              <li>Archive</li>
+            </ul>
+
+          </div>
+        </details>
+
+        <details class="plp-accordion-item" id="time-blocking">
+          <summary class="plp-accordion-header">🗓️ Time Blocking Starter Prompt <span class="plp-chevron">⌄</span></summary>
+          <div class="plp-accordion-body">
+            <p style="margin:0 0 12px;">Copy and paste this into ChatGPT to build your own time-blocked schedule.</p>
+            <pre class="plp-code-block"><code>I want to create a time-blocking schedule to help me stay organized and consistent in my real estate business. You are my business coach &mdash; help me design a schedule that fits how I actually work, not one I'll abandon after a week.
+
+Before we start:
+- I tend to struggle with [fill in].
+- I work best when [fill in].
+- I'm most productive during [fill in].
+- My biggest time wasters are [fill in].
+- My energy dips around [fill in].
+
+Here's what I think might work so far:
+- Vendor/lender meetings [days+times]
+- Client meetings [days+times]
+- Marketing work [when]
+- Lead gen/follow-up [days+times]
+- Personal/family time [days+times]
+
+Please create:
+1) A draft weekly schedule
+2) Tips to stay consistent and avoid burnout
+3) My non-negotiable time blocks to protect each week</code></pre>
+          </div>
+        </details>
+
+        <details class="plp-accordion-item" id="books-podcasts">
+          <summary class="plp-accordion-header">📚 Recommended Books &amp; Podcasts <span class="plp-chevron">⌄</span></summary>
+          <div class="plp-accordion-body">
+
+            <div class="plp-checklist-group-title" style="margin-bottom:10px;">Books</div>
+            <ul class="plp-plain-list" style="margin-bottom:22px;">
+              <li>The Millionaire Real Estate Agent</li>
+              <li>The Gap and the Gain</li>
+              <li>Ninja Selling</li>
+              <li>Exactly What to Say for Real Estate Agents</li>
+              <li>The 12 Week Year</li>
+              <li>The Four Agreements</li>
+            </ul>
+
+            <div class="plp-checklist-group-title" style="margin-bottom:10px;">Podcasts</div>
+            <ul class="plp-plain-list">
+              <li>The Tom Ferry Podcast Experience</li>
+              <li>Business School with Sharran Srivatsaa</li>
+              <li>AirBnB Roadmap (if interested in STRs)</li>
+            </ul>
+
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
   <div id="site-footer"></div>
 </div>
 
@@ -67,6 +176,16 @@
   plpRenderHeader('resources', '../');
   plpRenderFooter('../');
   plpInitAuth('../');
+
+  // If the URL points at a specific reference item (e.g. resources.html#time-blocking),
+  // open that accordion item and scroll it into view.
+  if (window.location.hash) {
+    var target = document.querySelector(window.location.hash);
+    if (target && target.tagName === 'DETAILS') {
+      target.open = true;
+      setTimeout(function () { target.scrollIntoView({ block: 'start' }); }, 50);
+    }
+  }
 </script>
 </body>
 </html>

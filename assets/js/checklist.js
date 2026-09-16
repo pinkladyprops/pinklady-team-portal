@@ -97,12 +97,18 @@ function plpInitSectionedChecklist(opts) {
   function renderItems(items) {
     return items.map(function (item) {
       var checked = !!saved[item.id];
-      return (
+      var html =
         '<label class="plp-checklist-item' + (checked ? ' is-checked' : '') + '">' +
           '<input type="checkbox" data-id="' + item.id + '"' + (checked ? ' checked' : '') + '>' +
           '<span>' + item.label + '</span>' +
-        '</label>'
-      );
+        '</label>';
+      // Optional raw HTML rendered as a sibling block right after the item
+      // (never inside the <label>, so nested <details>/links don't fight
+      // with the checkbox's click-to-toggle behavior).
+      if (item.extra) {
+        html += item.extra;
+      }
+      return html;
     }).join('');
   }
 
